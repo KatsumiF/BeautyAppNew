@@ -1,0 +1,37 @@
+﻿<Page x:Class="BeautyApp.Views.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BeautyApp.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Салон красоты ''">
+
+    <Grid>
+        <ListView x:Name="CategoriesListView"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center" >
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <Grid Width="250">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding CategoryImage}" Height="200"/>
+                        <TextBlock   Text="{Binding CategoryTitle}"  
+                                     Style="{StaticResource CategoryTextBlock}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <!--Вывод блоков в ряд-->
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</Page>

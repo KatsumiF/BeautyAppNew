@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="CaptionFont"> <!--С 9 стр. презентации-->
+        pack://application:,,,/Assets/Fonts/SFMono-Bold.ttf#SF Mono
+    </FontFamily> <!--Для внедрения своего стиля-->
+    
+    
+    <!--Цветовые характеристики ниже-->
+    <SolidColorBrush Color="#A3B3B0" x:Key="MainColor"/>
+    <!--MainColor это имя-->
+    <SolidColorBrush Color="#D9D2D0" x:Key="SecondColor"/>
+    <SolidColorBrush Color="Azure" x:Key="ActiveColor"/>
+    <SolidColorBrush Color="DarkSlateGray" x:Key="TextColor"/>
+    
+<!--Добавляются стили текста:-->
+    <Style TargetType="Grid" >
+        <Setter Property="Background" Value="{StaticResource MainColor}"/>
+    </Style>
+    <Style TargetType="TextBlock" >
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="0 0 5 0"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="TitleTextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="{StaticResource CaptionFont}"/>
+    </Style>
+
+<!--Стиль окна авторизации-->
+    <Style TargetType="UniformGrid">
+        <Setter Property="Margin" Value="0 5"/>
+    </Style>
+    <Style TargetType="TextBox" >
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <Style TargetType="PasswordBox" >
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <Style TargetType="Button" >
+        <Setter Property="Background" Value="{StaticResource SecondColor}"/>
+        <Setter Property="Padding" Value="5 5 5 5"/>
+        <Setter Property="Margin" Value="0 5 0 5"/>
+    </Style>
+
+    <Style TargetType="ListView" >
+        <Setter Property="Background" Value="{StaticResource MainColor}"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="CategoryTextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{StaticResource CaptionFont}"/>
+        <Setter Property="Border.CornerRadius" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource ActiveColor}"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+</ResourceDictionary>
